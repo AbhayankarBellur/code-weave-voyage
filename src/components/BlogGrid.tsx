@@ -5,6 +5,13 @@ import { Badge } from "@/components/ui/badge";
 import { Search, Filter } from "lucide-react";
 import { useState } from "react";
 
+import article1 from "@/assets/article-1.jpg";
+import article2 from "@/assets/article-2.jpg";
+import article3 from "@/assets/article-3.jpg";
+import article4 from "@/assets/article-4.jpg";
+import article5 from "@/assets/article-5.jpg";
+import article6 from "@/assets/article-6.jpg";
+
 const mockPosts = [
   {
     id: "1",
@@ -14,6 +21,7 @@ const mockPosts = [
     date: "Dec 15, 2024",
     readTime: "8 min read",
     tags: ["React", "JavaScript", "Performance"],
+    image: article1,
   },
   {
     id: "2",
@@ -23,6 +31,7 @@ const mockPosts = [
     date: "Dec 12, 2024",
     readTime: "12 min read",
     tags: ["TypeScript", "Types", "Advanced"],
+    image: article2,
   },
   {
     id: "3",
@@ -32,6 +41,7 @@ const mockPosts = [
     date: "Dec 10, 2024",
     readTime: "6 min read",
     tags: ["CSS", "Layout", "Design"],
+    image: article3,
   },
   {
     id: "4",
@@ -41,6 +51,7 @@ const mockPosts = [
     date: "Dec 8, 2024",
     readTime: "15 min read",
     tags: ["Node.js", "API", "Backend"],
+    image: article4,
   },
   {
     id: "5",
@@ -50,6 +61,7 @@ const mockPosts = [
     date: "Dec 5, 2024",
     readTime: "10 min read",
     tags: ["CSS", "Responsive", "Mobile"],
+    image: article5,
   },
   {
     id: "6",
@@ -59,6 +71,7 @@ const mockPosts = [
     date: "Dec 3, 2024",
     readTime: "9 min read",
     tags: ["GraphQL", "REST", "API"],
+    image: article6,
   },
 ];
 

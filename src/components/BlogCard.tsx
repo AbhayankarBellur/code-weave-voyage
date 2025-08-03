@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, User } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface BlogPost {
   id: string;
@@ -10,7 +11,7 @@ interface BlogPost {
   date: string;
   readTime: string;
   tags: string[];
-  image?: string;
+  image: string;
 }
 
 interface BlogCardProps {
@@ -18,8 +19,28 @@ interface BlogCardProps {
 }
 
 export const BlogCard = ({ post }: BlogCardProps) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (post.id === "1") {
+      navigate("/article/modern-react-patterns");
+    }
+  };
+
   return (
-    <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-card border-border hover:border-primary/50">
+    <Card 
+      className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-card border-border hover:border-primary/50 cursor-pointer"
+      onClick={handleClick}
+    >
+      {/* Article Image */}
+      <div className="relative overflow-hidden rounded-t-lg">
+        <img 
+          src={post.image} 
+          alt={post.title}
+          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+      </div>
       <CardHeader className="space-y-3">
         <div className="flex flex-wrap gap-2">
           {post.tags.map((tag) => (
